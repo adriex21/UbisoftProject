@@ -1,0 +1,147 @@
+.App {
+  height: 100vh;
+  /* height: -webkit-fill-available; */
+  background-color: #E8D5C4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+/* --- Header style --- */
+.header {
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3A98B9;
+  color: white;
+  justify-content: center;
+
+}
+
+.header h1 {
+  font-size: 48px;
+  text-align: center;
+  margin: 0;
+}
+
+.header p {
+  font-size: 0.75em;
+  margin: 0;
+  font-style: italic;
+}
+
+/* --- Chat Container style --- */
+.chat-container {
+  height: 100%;
+  /* height: -webkit-fill-available; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+/* --- Chat Replies style --- */
+.chat {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat a {
+  color: black;
+}
+
+.chat-bubble-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.openai-bubble-container {
+  background-color: #FFF1DC;
+}
+
+.profile-picture {
+  width: 30px;
+  height: 30px;
+}
+
+.profile-picture img {
+  border-radius: 5px;
+}
+
+.chat-bubble {
+  padding: 1em 1em;
+  max-width: 80%;
+}
+
+.user-bubble {
+  background-color: #E8D5C4;
+  color: black;
+  width: 75%;
+}
+
+.openai-bubble {
+  align-self: flex-start;
+  color: black;
+  width: 75%;
+}
+.openai-bubble .type-writer {
+  margin: 0;
+}
+
+/* --- Input Area style --- */
+.input-area {
+  width: 50vw;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  background-color: #E8D5C4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.input-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+
+.input-area input {
+  width: calc(100%);
+  background-color: #EEEEEE;
+  border: none;
+  color: black;
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.input-area button {
+background: transparent;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1em;
+}
+
+.input-area i {
+  color: white;
+  margin: 0.5em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
