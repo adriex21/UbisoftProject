@@ -6,6 +6,9 @@ function ChatInput({ handleChange, handleClick}) {
     return (
         <div>
           <div className="input-area">
+            <div className="input-text">
+              <p> Introduceti o zicala romaneasca: </p>
+            </div>
             <form className="input-container" onSubmit={(e) => handleSubmit(e)}>
               <input type="text" placeholder="Type your message here" id="user-input" onChange={(e) => handleChange(e.target.value)} />
               <button type="submit" onClick={handleClick}><i className="fas fa-paper-plane"></i></button>

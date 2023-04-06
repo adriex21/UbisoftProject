@@ -25,6 +25,24 @@ function App() {
     newChatData.history.push({ "type": "user", "data": prompt }) 
 
     let openAIPrompt = "Translate word by word from Romanian to english:\n" + prompt + ':';
+
+    function randomPrompt(){
+      let randint = Math.floor(Math.random()*3)+1;
+      var promptRand
+      switch(randint){
+          case 1:
+              promptRand = "Awesome Badass Biker Skull HD Wallpaper, Centered, by WallpaperAccess, by EnWallpaper";
+              break;
+          case 2:
+              promptRand = "ultra HD realistic real lifelike badass angry rage ghost rider skeleton motorbike leather jacket horror scary dark night fire by Pinterest by WallpaperAccess by EnWAllpaper"
+              break;
+          case 3:
+              promptRand = "realistic real life very real lifelike werewolf ripping clothes howling at the moon forest dark night wolfman dangerous"
+              break;
+          }
+          return promptRand;
+      }
+
     
     const response = await openai.createCompletion({
       model: "text-davinci-003",
@@ -37,7 +55,7 @@ function App() {
     });
 
     const imageResponse = await openai.createImage({
-      prompt: "ultra HD realistic real lifelike badass angry rage ghost rider skeleton motorbike leather jacket horror scary dark night fire by Pinterest by WallpaperAccess by EnWAllpaper",
+      prompt: randomPrompt(),
       n: 1,
       size: "512x512",
     });
@@ -46,31 +64,19 @@ function App() {
 
     const imgUrl = imageResponse.data.data[0].url;
 
-   
-    let processedTranslationResponse = response.data.choices[0].text; // I'm only using the text in my example
+    let processedTranslationResponse = response.data.choices[0].text; 
     newChatData.response = processedTranslationResponse.length === 0 ? "Sorry, no response" : processedTranslationResponse;
     newChatData.imageResponse = imgUrl;
     setChatData(newChatData); //update the state
     console.log('imageResponse',imageResponse)
     console.log('response', response);
-
-    
-
-    // Mocked response
-    // let response = { "data": {} }
-    // response.data = { "id": "cmpl-6he4kCxIA8rF1IL9WcM5WbiSp2k48", "object": "text_completion", "created": 1675860174, "model": "text-davinci-003", "choices": [{ "text": " 🤺⚔️🗡️🗿", "index": 0, "logprobs": null, "finish_reason": "stop" }], "usage": { "prompt_tokens": 16, "completion_tokens": 14, "total_tokens": 30 } };
-    
-    
-
-   
-
   };
 
   return (
     <div className="App">
       <Header></Header>
       <div className='chat-container'>
-        <ChatHistory chatHistory={chatData.history} response={chatData.response} />
+        {/* <ChatHistory chatHistory={chatData.history} response={chatData.response} /> */}
         <PhotoOutput processedImageResponse={chatData.imageResponse} processedTranslationResponse={chatData.response} />
         <ChatInput handleChange={setPrompt} handleClick={generateResponse} ></ChatInput>
         
