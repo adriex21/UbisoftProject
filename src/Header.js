@@ -1,5 +1,5 @@
 import catGif from '../src/rolling-cat-cat-rolling.gif'
-import logo from '../src/logo.png'
+import logo from '../src/ubisoft-logo-horizontal-vector.svg'
 function Header() {
     return (
         <div className="header">
@@ -12,7 +12,7 @@ function Header() {
                 <p >Let's make some memes</p>
             </div>
             <div className="rightSide"> 
-                <img src={logo} width="70px" height="50px"></img>
+                <img src={logo} width="100px" height="100px" style={{filter: "invert"}}></img>
             </div>
 
            
