@@ -5,6 +5,7 @@ import Header from './Header';
 import ChatHistory from './ChatHistory';
 import ChatInput from './ChatInput';
 import PhotoOutput from './PhotoOutput';
+import background from './graveyard_bg.png'
 
 function App() {
   const [prompt, setPrompt] = useState("");
@@ -73,7 +74,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage:`url(${background})` }}>
       <Header></Header>
       <div className='chat-container'>
         {/* <ChatHistory chatHistory={chatData.history} response={chatData.response} /> */}
